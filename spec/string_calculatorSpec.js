@@ -12,13 +12,13 @@ describe("Calculate a string", function(){
 	});
 
 	it("should handle two numbers", function(){
-	let result2 = add("1,2");
-	expect(result2).toBe(3);
+		let result2 = add("1,2");
+		expect(result2).toBe(3);
 	});
 
 	it("should handle an unknown amount of numbers", function(){
-	let result4 = add("1,2,3,4");
-	expect(result4).toBe(10);
+		let result4 = add("1,2,3,4");
+		expect(result4).toBe(10);
 	});
 
 	it("should split numbers with any detected delimiters", function(){
@@ -34,7 +34,7 @@ describe("Calculate a string", function(){
 	it("should handle delimiters of any length", function(){
 		let result7 = add("//[***]\n1***2***3");
 		expect(result7).toBe(6);
-		});
+	});
 	
 	it("should ignore numbers greater than 1000", function(){
 		let result8 = add("1003,3");
