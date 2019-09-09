@@ -2,8 +2,8 @@
 describe("Calculate a string", function(){
 
 	it("should return 0 for a empty string", function(){
-	let result1 = add("");
-	expect(result1).toBe(0);
+		let result1 = add("");
+		expect(result1).toBe(0);
 	});
 
 	it("should handle one number", function(){
