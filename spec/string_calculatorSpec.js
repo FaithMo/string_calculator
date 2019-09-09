@@ -1,38 +1,44 @@
 
 describe("Calculate a string", function(){
+
 	it("should return 0 for a empty string", function(){
-	let result = add("");
-	expect(result).toBe(0);
+	let result1 = add("");
+	expect(result1).toBe(0);
 	});
+
+	it("should handle one number", function(){
+		let result3 = add("1");
+		expect(result3).toBe(1);
+	});
+
 	it("should handle two numbers", function(){
 	let result2 = add("1,2");
 	expect(result2).toBe(3);
 	});
-	it("should handle one number", function(){
-		let resultg = add("1");
-		expect(resultg).toBe(1);
-		});
+
 	it("should handle an unknown amount of numbers", function(){
-	let result3 = add("1,2,3,4");
-	expect(result3).toBe(10);
+	let result4 = add("1,2,3,4");
+	expect(result4).toBe(10);
 	});
-	it("should detect demiliters and split with them", function(){
-		let result4 = add("//;\n1;2");
-		expect(result4).toBe(3);
-		});
+
+	it("should split numbers with any detected delimiters", function(){
+		let result5 = add("//;\n1;2");
+		expect(result5).toBe(3);
+	});
+
 	it("should not handle negative numbers", function(){
-		let resultu = add("-3,5");
-		expect(resultu).toBe("negatives not allowed");
-		});
+		let result6 = add("-3,5");
+		expect(result6).toBe("negatives not allowed");
+	});
 
 	it("should handle delimiters of any length", function(){
-		let resultu = add("//[***]\n1***2***3");
-		expect(resultu).toBe(6);
+		let result7 = add("//[***]\n1***2***3");
+		expect(result7).toBe(6);
 		});
 	
 	it("should ignore numbers greater than 1000", function(){
-		let resultu = add("1003,3");
-		expect(resultu).toBe(3);
-		});
+		let result8 = add("1003,3");
+		expect(result8).toBe(3);
+	});
 
 })

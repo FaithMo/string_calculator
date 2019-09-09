@@ -30,9 +30,11 @@ function add(num){
             }
             return count2;
         }
+        
     }else{
         return 0;
     }
 }
 
-//add("//;\n1;-2");
+
+add("2000,6");
