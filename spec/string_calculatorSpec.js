@@ -1,3 +1,5 @@
+let add = require('../src/string_calcu');
+
 var searchNeg = /[-]/g;
 
 showError = num => {
