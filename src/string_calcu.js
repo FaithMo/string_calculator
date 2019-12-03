@@ -27,4 +27,6 @@ function add(num) {
   }
 }
 
-add("2000,6");
+module.exports = add;
+
+
