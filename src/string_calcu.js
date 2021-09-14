@@ -1,4 +1,3 @@
-var num;
 function add(num) {
   if (num !== "") {
     var search = /[0-9]+/g;
@@ -12,7 +11,7 @@ function add(num) {
 
       for (var j in searchNum2) {
         if (searchNum3[j] < 0) {
-          throw new Error ("negatives not allowed");
+          throw new Error("negatives not allowed");
         } else if (searchNum2[j] > 1000) {
           searchNum2[j] == 0;
           count2 += 0;
@@ -28,5 +27,3 @@ function add(num) {
 }
 
 module.exports = add;
-
-
