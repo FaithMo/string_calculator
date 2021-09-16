@@ -1,4 +1,4 @@
-let add = require("../src/string_calcu");
+let add = require("../src/stringCalculator");
 var searchNeg = /[-]/g;
 showError = (num) => {
   var testNeg = searchNeg.test(num); //boolean
