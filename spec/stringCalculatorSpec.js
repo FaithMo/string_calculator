@@ -53,3 +53,9 @@ describe("String calculator", () => {
     expect(result8).toBe(3);
   });
 });
+
+describe("Data Validation", () => {
+  it("Should detect incorrect input", () => {
+    expect(add("1,2,3//;\n1000,1;2").toThrow("ERROR: invalid input"))
+  })
+})
