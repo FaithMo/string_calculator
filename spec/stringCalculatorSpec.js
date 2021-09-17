@@ -1,7 +1,7 @@
 let add = require("../src/stringCalculator");
-var searchNeg = /[-]/g;
+let searchNeg = /[-]/g;
 showError = (num) => {
-  var testNeg = searchNeg.test(num); //boolean
+  let testNeg = searchNeg.test(num); //boolean
   if (!testNeg) {
     return "Great!";
   } else {
@@ -11,8 +11,8 @@ showError = (num) => {
 
 describe("String calculator", () => {
   it("should throw an error for negative numbers", () => {
-    var result6 = showError("-35");
-    var jasmineError = () => {
+    let result6 = showError("-35");
+    let jasmineError = () => {
       throw result6;
     };
     expect(jasmineError).toThrow("negatives not allowed");
@@ -44,8 +44,8 @@ describe("String calculator", () => {
   });
 
   it("should handle delimiters of any length", function () {
-    let result7 = add("//[***]\n1***2***3");
-    expect(result7).toBe(6);
+    let result7 = add("//[abc][777][:(]\n1abc27773:(1");
+    expect(result7).toBe(7);
   });
 
   it("should ignore numbers greater than 1000", function () {
@@ -55,7 +55,8 @@ describe("String calculator", () => {
 });
 
 describe("Data Validation", () => {
-  it("Should detect incorrect input", () => {
-    expect(add("1,2,3//;\n1000,1;2").toThrow("ERROR: invalid input"))
-  })
-})
+  it("Should detect correct input", () => {
+    let result9 = add("1,2,3;\n1000,1;2");
+    expect(result9).toBe(9);
+  });
+});
