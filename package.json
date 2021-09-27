@@ -1,0 +1,22 @@
+{
+  "name": "string_calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FaithMo/string_calculator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FaithMo/string_calculator/issues"
+  },
+  "homepage": "https://github.com/FaithMo/string_calculator#readme",
+  "dependencies": {
+    "jasmine": "^3.9.0"
+  }
+}
