@@ -26,13 +26,18 @@ function invalidFormat(str) {
     let testLast = regex.test(lastChar);
     let testFirst = str.match(regex);
     let testAgain = regex.test(testFirst[0]);
+
     if (str.includes("//") && testLast === true) {
-      if (str.charAt(0, 1) === "/" && str.charAt(0) === "/") {
+      if (str.charAt(1) === "/" && str.charAt(0) === "/") {
         return true;
       }
-    } else if (!str.includes("//") && testAgain === true && testLast === true) {
+    } else if(str.includes("\*") && str.includes("%")){
+      if(str.charAt(1) !== "/" && str.charAt(0) !== "/"){
+        throw new Error("ERROR: invalid input");             
+      }
+    }else if (!str.includes("//") && testAgain === true && testLast === true) {
       return true;
-    } else {
+    }else {
       throw new Error("ERROR: invalid input");
     }
   }
@@ -48,7 +53,7 @@ function add(num) {
     if (testSearch == true) {
       let count2 = 0;
       if (num.charAt(2) == "[") return delimiters(num);
-
+ 
       for (let j in searchNum2) {
         if (searchNum3[j] < 0) {
           throw new Error("negatives not allowed");
@@ -65,4 +70,6 @@ function add(num) {
     return 0;
   }
 }
+
+console.log(add("[\*][%]\n1\*2%3"))
 module.exports = add;
